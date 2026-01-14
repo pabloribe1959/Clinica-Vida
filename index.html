@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Clínica Vida — Diagnóstico e Especialidades</title>
-  <meta name="description" content="Clínica Vida — Pediatria, Clínica Geral, Gastroenterologia, Ortopedia, Ginecologia/Obstetrícia e Ultrassom em Ji-Paraná/RO."/>
+  <title>Clínica Vida — Diagnóstico e Especialidades Médicas</title>
+  <meta name="description" content="Clínica Vida — Pediatria, Clínica Geral, Gastroenterologia, Ortopedia, Ginecologia/Obstetrícia e Ultrassom em Ji-Paraná/RO." />
+
   <style>
     :root{
       --blue:#0B5ED7;
@@ -15,19 +16,18 @@
       --border:#B7E4C7;
       --text1:#2F6F55;
       --text2:#4E7C6A;
+      --dark:#0f172a;
       --white:#fff;
-      --shadow: 0 12px 30px rgba(0,0,0,.08);
+      --shadow: 0 14px 28px rgba(0,0,0,.08);
       --shadow2: 0 10px 18px rgba(0,0,0,.08);
-      --radius: 22px;
-      --radius2: 28px;
       --max: 1120px;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica;
-      color: var(--blue);
       background: linear-gradient(135deg,var(--bg1),var(--bg2));
+      color: var(--blue);
     }
     a{color:inherit; text-decoration:none}
     .container{max-width:var(--max); margin:0 auto; padding:0 18px}
@@ -48,9 +48,9 @@
       background:#fff; padding:6px; box-shadow: 0 6px 14px rgba(0,0,0,.06);
     }
     .brand .name{font-weight:900; font-size:14px; letter-spacing:.2px}
-    .brand .sub{font-size:12px; color:var(--text2); margin-top:2px}
+    .brand .sub{font-size:12px; color:var(--text2); margin-top:2px; font-weight:700}
     nav{display:none; gap:18px}
-    nav a{font-size:14px; font-weight:700; color:var(--text1)}
+    nav a{font-size:14px; font-weight:800; color:var(--text1)}
     nav a:hover{color:var(--blue)}
     @media(min-width:900px){ nav{display:flex;} }
 
@@ -80,12 +80,15 @@
     }
     .actions{display:flex; gap:10px; align-items:center}
 
-    /* Hero */
+    /* HERO */
     .hero{padding:34px 0 10px}
-    .heroGrid{
-      display:grid; gap:22px;
+    .heroGrid{display:grid; gap:22px}
+    @media(min-width:900px){
+      .heroGrid{
+        grid-template-columns: 1.1fr .9fr;
+        align-items:start; gap:28px;
+      }
     }
-    @media(min-width:900px){ .heroGrid{grid-template-columns: 1.1fr .9fr; align-items:center; gap:28px;} }
     .pill{
       display:inline-flex; align-items:center; gap:10px;
       border:1px solid var(--border);
@@ -104,7 +107,7 @@
       color:var(--blue);
     }
     @media(max-width:460px){ h1{font-size:34px;} }
-    .lead{margin:14px 0 0; color:var(--text2); font-size:16px; line-height:1.65}
+    .lead{margin:14px 0 0; color:var(--text2); font-size:16px; line-height:1.65; font-weight:700}
     .heroBtns{margin-top:16px; display:flex; flex-direction:column; gap:10px}
     @media(min-width:520px){ .heroBtns{flex-direction:row;} }
 
@@ -118,21 +121,32 @@
       box-shadow: 0 8px 18px rgba(0,0,0,.05);
     }
     .stat .v{font-size:24px; font-weight:1000; color:var(--blue)}
-    .stat .l{font-size:13px; color:var(--text2); margin-top:4px; font-weight:700}
+    .stat .l{font-size:13px; color:var(--text2); margin-top:4px; font-weight:800}
 
-    .meta{margin-top:12px; display:flex; flex-wrap:wrap; gap:10px; color:var(--text1); font-weight:800; font-size:13px}
+    .heroInfo{
+      margin-top:14px;
+      display:grid;
+      gap:10px;
+      color:var(--text1);
+      font-weight:900;
+      font-size:13px;
+    }
+    .infoRow{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
     .dot{color:#cbd5e1}
 
-    /* Card visual */
+    /* Right card - responsive, no overlap */
     .mock{
-      border-radius:var(--radius2);
+      width:100%;
+      max-width:560px;
+      margin:0 auto;
+      border-radius:28px;
       border:1px solid var(--border);
       background:#fff;
       padding:14px;
       box-shadow: var(--shadow);
     }
     .mockInner{
-      border-radius:var(--radius);
+      border-radius:22px;
       border:1px solid var(--border);
       background: linear-gradient(135deg,var(--bg1),var(--bg2));
       padding:16px;
@@ -141,16 +155,17 @@
     .miniLogo{
       width:44px; height:44px; display:grid; place-items:center;
       border-radius:16px; background:#fff; box-shadow: 0 6px 14px rgba(0,0,0,.06);
+      overflow:hidden;
     }
     .mockTitle{font-weight:1000; font-size:14px; color:var(--blue)}
-    .mockSub{font-size:12px; color:var(--text2); margin-top:2px}
+    .mockSub{font-size:12px; color:var(--text2); margin-top:2px; font-weight:800}
     .badge{
       border-radius:999px;
       border:1px solid var(--border);
       background: rgba(255,255,255,.75);
       padding:6px 10px;
       font-size:12px;
-      font-weight:900;
+      font-weight:1000;
       color:var(--text1);
       box-shadow: 0 6px 14px rgba(0,0,0,.04);
     }
@@ -171,7 +186,7 @@
       color:var(--blue);
       font-weight:1000;
     }
-    .mockLabel{font-weight:900; color:#1f2937; font-size:14px}
+    .mockLabel{font-weight:900; color:var(--dark); font-size:14px}
     .mockLink{font-size:12px; font-weight:1000; color:var(--blue)}
     .mockLink:hover{text-decoration:underline}
     .mockFooter{
@@ -182,7 +197,7 @@
       padding:12px;
     }
     .mockFooter .t{font-weight:1000; color:var(--blue); font-size:13px}
-    .mockFooter .d{margin-top:6px; color:var(--text1); font-weight:800; font-size:13px}
+    .mockFooter .d{margin-top:6px; color:var(--text1); font-weight:900; font-size:13px}
 
     /* Sections */
     section{padding:56px 0}
@@ -201,7 +216,7 @@
       box-shadow: 0 8px 18px rgba(0,0,0,.05);
     }
     h2{margin:12px 0 0; font-size:34px; font-weight:1000; letter-spacing:-.5px; color:var(--blue)}
-    .secDesc{margin:12px 0 0; color:var(--text2); line-height:1.7; font-weight:700}
+    .secDesc{margin:12px 0 0; color:var(--text2); line-height:1.7; font-weight:800}
 
     /* Search */
     .searchWrap{max-width:560px; margin:22px auto 0}
@@ -231,6 +246,7 @@
       padding:18px;
       box-shadow: 0 8px 18px rgba(0,0,0,.05);
       transition:.18s transform, .18s box-shadow;
+      cursor:pointer;
     }
     .card:hover{transform: translateY(-3px); box-shadow: var(--shadow2)}
     .cardTop{display:flex; align-items:flex-start; justify-content:space-between; gap:10px}
@@ -252,7 +268,7 @@
     }
     .card:hover .chip{opacity:1}
     .card h3{margin:12px 0 0; font-size:18px; font-weight:1000; color:var(--blue)}
-    .card p{margin:8px 0 0; color:var(--text2); line-height:1.6; font-weight:700; font-size:13px}
+    .card p{margin:8px 0 0; color:var(--text2); line-height:1.6; font-weight:800; font-size:13px}
     .tags{margin-top:12px; display:flex; flex-wrap:wrap; gap:8px}
     .tag{
       border:1px solid var(--border);
@@ -260,35 +276,9 @@
       background: rgba(255,255,255,.75);
       padding:6px 10px;
       font-size:12px;
-      font-weight:900;
+      font-weight:1000;
       color:var(--text1);
     }
-
-    /* Feature blocks */
-    .features{margin-top:28px; display:grid; gap:14px}
-    @media(min-width:900px){ .features{grid-template-columns: repeat(3,1fr);} }
-    .feature .title{margin-top:12px; font-weight:1000; color:var(--blue)}
-    .feature .desc{margin-top:6px; color:var(--text2); font-weight:700; line-height:1.65; font-size:13px}
-
-    .twoCol{margin-top:18px; display:grid; gap:14px}
-    @media(min-width:900px){ .twoCol{grid-template-columns: 1fr 1fr;} }
-    .panel{
-      border:1px solid var(--border);
-      background:#fff;
-      border-radius:24px;
-      padding:18px;
-      box-shadow: 0 8px 18px rgba(0,0,0,.05);
-    }
-    .panel .h{font-weight:1000; color:var(--blue); display:flex; align-items:center; gap:10px; font-size:14px}
-    .panel .p{margin-top:10px; color:var(--text1); font-weight:800; font-size:13px}
-    .hint{margin-top:12px; background: linear-gradient(135deg,var(--bg1),var(--bg2)); border-radius:16px; padding:12px; color:var(--text1); font-weight:800; font-size:13px}
-
-    /* Testimonials */
-    .testGrid{margin-top:28px; display:grid; gap:14px}
-    @media(min-width:900px){ .testGrid{grid-template-columns: repeat(3,1fr);} }
-    .stars{letter-spacing:1px; font-weight:1000; color:var(--blue)}
-    .small{font-size:12px; color:var(--text2); font-weight:800}
-    .quote{margin-top:12px; font-weight:800; color:var(--text1); line-height:1.65; font-size:13px}
 
     /* Location */
     .locGrid{margin-top:26px; display:grid; gap:14px}
@@ -305,7 +295,7 @@
     details[open]{background:#fff}
     summary{cursor:pointer; list-style:none; font-weight:1000; color:var(--blue); font-size:14px}
     summary::-webkit-details-marker{display:none}
-    .faqA{margin-top:10px; color:var(--text1); font-weight:800; line-height:1.65; font-size:13px}
+    .faqA{margin-top:10px; color:var(--text1); font-weight:900; line-height:1.65; font-size:13px}
 
     /* Footer */
     footer{padding:38px 0; border-top:1px solid var(--border); background: linear-gradient(135deg,var(--bg1),var(--bg2))}
@@ -318,7 +308,7 @@
       margin-top:18px; padding-top:16px;
       border-top:1px solid var(--border);
       display:flex; flex-direction:column; gap:10px;
-      color:var(--text2); font-weight:800; font-size:12px;
+      color:var(--text2); font-weight:900; font-size:12px;
     }
     @media(min-width:900px){ .footBottom{flex-direction:row; justify-content:space-between; align-items:center;} }
 
@@ -338,7 +328,6 @@
 </head>
 
 <body>
-  <!-- CONFIG -->
   <script>
     const CLINIC = {
       nome: "CLÍNICA VIDA",
@@ -353,7 +342,6 @@
       mapsEmbedUrl: "https://www.google.com/maps?q=Av.%20Brasil,%20n%C2%BA%20408%20%E2%80%94%20Bairro%20Nova%20Bras%C3%ADlia,%20Ji-Paran%C3%A1%20-%20RO&output=embed",
     };
 
-    // Logo SVG embutida (você pode trocar por imagem PNG depois)
     const LOGO_SVG = `
       <svg xmlns='http://www.w3.org/2000/svg' width='520' height='180' viewBox='0 0 520 180'>
         <rect width='520' height='180' rx='28' fill='white'/>
@@ -368,6 +356,10 @@
       </svg>
     `;
 
+    function svgToDataUrl(svg){
+      return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+    }
+
     const SERVICES = [
       { title:"Pediatria", desc:"Atendimento humanizado para bebês, crianças e adolescentes: consulta, acompanhamento e orientações preventivas.", tags:["Consulta","Acompanhamento","Preventivo"], ico:"👶" },
       { title:"Clínica Geral", desc:"Avaliação completa, check-ups e manejo de condições clínicas do dia a dia, com foco em cuidado contínuo.", tags:["Check-up","Acompanhamento","Exames"], ico:"🩺" },
@@ -376,6 +368,14 @@
       { title:"Ginecologia e Obstetrícia", desc:"Cuidado integral da saúde da mulher: rotina, prevenção, planejamento e acompanhamento gestacional.", tags:["Rotina","Prevenção","Gestação"], ico:"♀️" },
       { title:"Ultrassom", desc:"Exames de imagem com qualidade e agilidade, integrados ao cuidado clínico e ao acompanhamento.", tags:["Imagem","Agilidade","Qualidade"], ico:"🖥️" },
     ];
+
+    const phoneDigits = CLINIC.telefone.replace(/\D/g,"");
+    const telHref = "tel:+55" + phoneDigits;
+    const mailHref = "mailto:" + CLINIC.email;
+    const mapsLink = `https://www.google.com/maps?q=${encodeURIComponent(`${CLINIC.enderecoLinha1}, ${CLINIC.enderecoLinha2}`)}`;
+    const logoUrl = svgToDataUrl(LOGO_SVG);
+
+    function $(id){ return document.getElementById(id); }
   </script>
 
   <!-- HEADER -->
@@ -429,13 +429,25 @@
               <div class="stat"><div class="v">Humanização</div><div class="l">Foco</div></div>
             </div>
 
-            <div class="meta">
-              <span>🕒 <span id="clinicHours"></span></span>
-              <span class="dot">•</span>
-              <span>📍 <span id="clinicCity"></span></span>
+            <!-- PRIMEIRA PARTE com Endereço + Telefone + Localização -->
+            <div class="heroInfo">
+              <div class="infoRow">🕒 <span id="clinicHours"></span></div>
+
+              <div class="infoRow">
+                📍 <span id="addr1" style="font-weight:1000"></span>
+                <span class="dot">•</span>
+                <span id="addr2"></span>
+              </div>
+
+              <div class="infoRow">
+                📞 <a id="telHero" href="#" style="font-weight:1000" class="mockLink"><span id="phoneHero"></span></a>
+                <span class="dot">•</span>
+                🗺️ <a id="mapsHero" class="mockLink" href="#" target="_blank" rel="noopener">Como chegar</a>
+              </div>
             </div>
           </div>
 
+          <!-- Right visual (adjusted to page size) -->
           <div class="mock">
             <div class="mockInner">
               <div class="mockHead">
@@ -489,101 +501,6 @@
       </div>
     </section>
 
-    <!-- DIFERENCIAIS -->
-    <section id="diferenciais" class="soft">
-      <div class="container">
-        <div class="secHead">
-          <div class="kicker">🛡️ Mais do que consulta</div>
-          <h2>Um atendimento mais humano, do início ao fim</h2>
-          <p class="secDesc">
-            Organização, acolhimento e clareza — para você se sentir seguro(a) e bem orientado(a) em cada etapa.
-          </p>
-        </div>
-
-        <div class="features">
-          <div class="card feature">
-            <div class="cardIco">🤍</div>
-            <div class="title">Recepção acolhedora</div>
-            <div class="desc">Ambiente limpo, confortável e com organização para reduzir estresse e tempo de espera.</div>
-          </div>
-          <div class="card feature">
-            <div class="cardIco">✅</div>
-            <div class="title">Orientação clara</div>
-            <div class="desc">Você sai com plano de cuidado e próximos passos bem definidos: exames, retorno e sinais de alerta.</div>
-          </div>
-          <div class="card feature">
-            <div class="cardIco">💬</div>
-            <div class="title">Agilidade no contato</div>
-            <div class="desc">Agendamento e dúvidas via WhatsApp, com resposta rápida e encaminhamento para a especialidade certa.</div>
-          </div>
-        </div>
-
-        <div class="twoCol">
-          <div class="panel">
-            <div class="h">🕒 Horário de funcionamento</div>
-            <div class="p" id="hours2"></div>
-            <div class="hint"><b>Dica:</b> Para reduzir tempo de espera, chegue com 10 minutos de antecedência.</div>
-          </div>
-          <div class="panel">
-            <div class="h">✉️ Contato</div>
-            <div class="p">
-              📞 <a id="telLink" class="footLink" href="#"><span id="phone2"></span></a><br/>
-              💬 <a id="waLink" class="footLink" href="#" target="_blank" rel="noopener">WhatsApp</a><br/>
-              ✉️ <a id="mailLink" class="footLink" href="#"><span id="mail2"></span></a>
-            </div>
-            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-              <a id="btnWaDiff" class="btn primary" href="#" target="_blank" rel="noopener">Agendar</a>
-              <a id="btnTelDiff" class="btn secondary" href="#">Ligar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DEPOIMENTOS -->
-    <section class="white">
-      <div class="container">
-        <div class="secHead">
-          <div class="kicker">🛡️ Experiência do paciente</div>
-          <h2>Confiança se constrói com cuidado</h2>
-          <p class="secDesc">Textos de exemplo (substitua por depoimentos reais quando tiver).</p>
-        </div>
-
-        <div class="testGrid">
-          <div class="card">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
-              <div>
-                <div class="footTitle">Paciente</div>
-                <div class="small">Atendimento clínico</div>
-              </div>
-              <div class="stars">★★★★★</div>
-            </div>
-            <div class="quote">“Fui muito bem atendido, tudo organizado e explicaram com clareza o que eu precisava fazer.”</div>
-          </div>
-          <div class="card">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
-              <div>
-                <div class="footTitle">Mãe de paciente</div>
-                <div class="small">Pediatria</div>
-              </div>
-              <div class="stars">★★★★★</div>
-            </div>
-            <div class="quote">“Ambiente acolhedor, consulta tranquila e com orientações detalhadas. Recomendo!”</div>
-          </div>
-          <div class="card">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px">
-              <div>
-                <div class="footTitle">Paciente</div>
-                <div class="small">Ultrassom</div>
-              </div>
-              <div class="stars">★★★★★</div>
-            </div>
-            <div class="quote">“Consegui agendar rápido pelo WhatsApp e fui atendido no horário. Excelente!”</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- LOCALIZAÇÃO -->
     <section id="localizacao" class="soft">
       <div class="container">
@@ -594,25 +511,27 @@
         </div>
 
         <div class="locGrid">
-          <div class="panel">
-            <div class="h">📍 Endereço</div>
-            <div class="p">
-              <div style="font-weight:1000" id="addr1"></div>
-              <div style="color:var(--text2); margin-top:4px" id="addr2"></div>
+          <div class="card">
+            <div class="cardTop">
+              <div class="cardIco">📍</div>
+              <div class="chip" style="opacity:1">Endereço</div>
+            </div>
+            <h3 id="addrCard1"></h3>
+            <p id="addrCard2"></p>
+
+            <div class="tags">
+              <span class="tag">📞 <span id="addrPhone"></span></span>
+              <span class="tag">🕒 <span id="addrHours"></span></span>
             </div>
 
-            <div class="hint">
-              <div style="font-weight:1000">Contato rápido</div>
-              <div style="margin-top:6px" id="phone3"></div>
-            </div>
-
-            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-              <a id="btnWaLoc" class="btn primary" href="#" target="_blank" rel="noopener">Abrir WhatsApp</a>
-              <a id="btnTelLoc" class="btn secondary" href="#">Ligar</a>
+            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn primary" id="btnWaLoc" href="#" target="_blank" rel="noopener">Abrir WhatsApp</a>
+              <a class="btn secondary" id="btnTelLoc" href="#">Ligar</a>
+              <a class="btn secondary" id="btnMapsLoc" href="#" target="_blank" rel="noopener">Como chegar</a>
             </div>
           </div>
 
-          <div class="panel" style="padding:0; overflow:hidden">
+          <div class="card" style="padding:0; overflow:hidden">
             <iframe id="map" title="Mapa Clínica Vida" width="100%" height="360" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
@@ -662,7 +581,7 @@
               <div class="sub" id="clinicSub2"></div>
             </div>
           </div>
-          <p style="margin-top:12px; color:var(--text1); font-weight:800; line-height:1.65; font-size:13px">
+          <p style="margin-top:12px; color:var(--text1); font-weight:900; line-height:1.65; font-size:13px">
             Especialidades e diagnóstico com um atendimento organizado, acolhedor e focado
             em orientar bem você e sua família.
           </p>
@@ -679,9 +598,9 @@
 
         <div>
           <div class="footTitle">Endereço</div>
-          <div style="margin-top:10px; color:var(--text1); font-weight:900; font-size:13px">
+          <div style="margin-top:10px; color:var(--text1); font-weight:1000; font-size:13px">
             📍 <span id="addrFoot1"></span><br/>
-            <span style="color:var(--text2); font-weight:800" id="addrFoot2"></span><br/><br/>
+            <span style="color:var(--text2); font-weight:900" id="addrFoot2"></span><br/><br/>
             🕒 <span id="hoursFoot"></span>
           </div>
         </div>
@@ -700,58 +619,57 @@
   </a>
 
   <script>
-    // Inject logo as data-url
-    function svgToDataUrl(svg){
-      return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
-    }
-    const logoUrl = svgToDataUrl(LOGO_SVG);
+    // Fill logo + text
+    $("logoTop").src = logoUrl;
+    $("logoFoot").src = logoUrl;
+    $("miniLogo").innerHTML = LOGO_SVG;
 
-    // Fill clinic info
-    document.getElementById("logoTop").src = logoUrl;
-    document.getElementById("logoFoot").src = logoUrl;
-    document.getElementById("miniLogo").innerHTML = LOGO_SVG;
+    $("clinicName").textContent = CLINIC.nome;
+    $("clinicName2").textContent = CLINIC.nome;
+    $("clinicName3").textContent = CLINIC.nome;
+    $("clinicName4").textContent = CLINIC.nome;
+    $("clinicSub").textContent = CLINIC.subtitulo;
+    $("clinicSub2").textContent = CLINIC.subtitulo;
 
-    document.getElementById("clinicName").textContent = CLINIC.nome;
-    document.getElementById("clinicName2").textContent = CLINIC.nome;
-    document.getElementById("clinicName3").textContent = CLINIC.nome;
-    document.getElementById("clinicName4").textContent = CLINIC.nome;
-    document.getElementById("clinicSub").textContent = CLINIC.subtitulo;
-    document.getElementById("clinicSub2").textContent = CLINIC.subtitulo;
+    $("clinicHours").textContent = CLINIC.horario;
+    $("clinicPhone").textContent = CLINIC.telefoneFormatado;
 
-    document.getElementById("clinicHours").textContent = CLINIC.horario;
-    document.getElementById("clinicCity").textContent = CLINIC.enderecoLinha2;
-    document.getElementById("clinicPhone").textContent = CLINIC.telefoneFormatado;
-    document.getElementById("hours2").textContent = CLINIC.horario;
+    // Hero info
+    $("addr1").textContent = CLINIC.enderecoLinha1;
+    $("addr2").textContent = CLINIC.enderecoLinha2;
+    $("phoneHero").textContent = CLINIC.telefoneFormatado;
 
-    document.getElementById("addr1").textContent = CLINIC.enderecoLinha1;
-    document.getElementById("addr2").textContent = CLINIC.enderecoLinha2;
-    document.getElementById("addrFoot1").textContent = CLINIC.enderecoLinha1;
-    document.getElementById("addrFoot2").textContent = CLINIC.enderecoLinha2;
-    document.getElementById("hoursFoot").textContent = CLINIC.horario;
+    // Location card
+    $("addrCard1").textContent = CLINIC.enderecoLinha1;
+    $("addrCard2").textContent = CLINIC.enderecoLinha2;
+    $("addrPhone").textContent = CLINIC.telefoneFormatado;
+    $("addrHours").textContent = CLINIC.horario;
 
-    document.getElementById("phone2").textContent = CLINIC.telefoneFormatado;
-    document.getElementById("phone3").textContent = CLINIC.telefoneFormatado + " • WhatsApp disponível";
-    document.getElementById("phoneFoot").textContent = CLINIC.telefoneFormatado;
-    document.getElementById("mail2").textContent = CLINIC.email;
-    document.getElementById("mailFoot2").textContent = CLINIC.email;
+    // Footer address
+    $("addrFoot1").textContent = CLINIC.enderecoLinha1;
+    $("addrFoot2").textContent = CLINIC.enderecoLinha2;
+    $("hoursFoot").textContent = CLINIC.horario;
+    $("phoneFoot").textContent = CLINIC.telefoneFormatado;
+    $("mailFoot2").textContent = CLINIC.email;
 
     // Links
-    const telHref = "tel:+55" + CLINIC.telefone.replace(/\D/g,"");
-    const mailHref = "mailto:" + CLINIC.email;
-    [
-      ["btnTelTop","btnTelServ","btnTelDiff","btnTelLoc","telLink","telFoot"]
-    ].flat().forEach(id=>{ const el=document.getElementById(id); if(el) el.href = telHref; });
+    $("btnTelTop").href = telHref;
+    $("btnTelServ").href = telHref;
+    $("btnTelLoc").href = telHref;
+    $("telHero").href = telHref;
+    $("telFoot").href = telHref;
 
-    ["btnWaTop","btnWaHero","btnWaServ","btnWaDiff","btnWaLoc","btnWaFaq","waLink","waFoot","waFloat"].forEach(id=>{
-      const el=document.getElementById(id); if(el) el.href = CLINIC.whatsapp;
+    ["btnWaTop","btnWaHero","btnWaServ","btnWaLoc","btnWaFaq","waFoot","waFloat"].forEach(id=>{
+      $(id).href = CLINIC.whatsapp;
     });
 
-    ["mailLink","mailFoot"].forEach(id=>{
-      const el=document.getElementById(id); if(el) el.href = mailHref;
-    });
+    $("mailFoot").href = mailHref;
+
+    $("mapsHero").href = mapsLink;
+    $("btnMapsLoc").href = mapsLink;
 
     // Map
-    document.getElementById("map").src = CLINIC.mapsEmbedUrl;
+    $("map").src = CLINIC.mapsEmbedUrl;
 
     // Build mock list
     const mockLabels = [
@@ -762,7 +680,7 @@
       {ico:"♀️", label:"Ginecologia/Obstetrícia"},
       {ico:"🖥️", label:"Ultrassom"},
     ];
-    const mockList = document.getElementById("mockList");
+    const mockList = $("mockList");
     mockLabels.forEach(x=>{
       const row=document.createElement("div");
       row.className="mockItem";
@@ -777,7 +695,7 @@
     });
 
     // Services render + search
-    const grid = document.getElementById("servicesGrid");
+    const grid = $("servicesGrid");
     function renderServices(list){
       grid.innerHTML = "";
       list.forEach(s=>{
@@ -798,7 +716,7 @@
     }
     renderServices(SERVICES);
 
-    document.getElementById("search").addEventListener("input", (e)=>{
+    $("search").addEventListener("input", (e)=>{
       const q=(e.target.value||"").toLowerCase().trim();
       if(!q){ renderServices(SERVICES); return; }
       const filtered = SERVICES.filter(s =>
@@ -807,7 +725,7 @@
       renderServices(filtered);
     });
 
-    document.getElementById("year").textContent = new Date().getFullYear();
+    $("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
